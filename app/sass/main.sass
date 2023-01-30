@@ -1,0 +1,49 @@
+@import base
+
+// -----CONTAINER-----
+.container
+	width: 100%
+	max-width: 1650px
+	padding: 0 15px
+	margin: 0 auto
+
+	+r(1650)
+		max-width: 1200px
+
+	+r(1200)
+		max-width: 992px
+
+	+r(992)
+		max-width: 768px
+
+	+r(767)
+		max-width: 576px
+
+	+r(576)
+		max-width: 480px
+
+// -----BUTTON-----
+.btn
+	position: relative
+	display: flex
+	justify-content: center
+	align-items: center
+	height: 45px
+	border-radius: 20px
+	max-width: fit-content
+	border: 1px solid $dark
+	background-color: $dark
+	padding: 0 15px
+	font-size: 16px
+	color: #fff
+	font-weight: 600
+
+	&:hover
+		border: 1px solid $accent
+		background: $accent
+		color: #fff
+
+	&:active
+		border: 1px solid #fff
+		background: $accent
+		color: #fff
