@@ -6,6 +6,10 @@
 	max-width: 1650px
 	padding: 0 15px
 	margin: 0 auto
+	display: grid
+	grid-template-columns: 345px 1fr 345px
+	grid-template-areas: 'header header header' 'menu banner banner' 'login tovar plus' 'search tovar sales' 'program tovar ...' 'footer footer footer'
+	gap: 30px
 
 	+r(1650)
 		max-width: 1200px
@@ -22,28 +26,76 @@
 	+r(576)
 		max-width: 480px
 
-// -----BUTTON-----
-.btn
-	position: relative
-	display: flex
-	justify-content: center
-	align-items: center
-	height: 45px
-	border-radius: 20px
-	max-width: fit-content
-	border: 1px solid $dark
-	background-color: $dark
-	padding: 0 15px
-	font-size: 16px
-	color: #fff
-	font-weight: 600
+.header
+	grid-area: header
+	padding: 25px 0
 
-	&:hover
-		border: 1px solid $accent
-		background: $accent
-		color: #fff
+	&__container
+		display: grid
+		align-items: center
+		grid-template: auto / minmax(345px, auto) auto
+		justify-content: space-between
 
-	&:active
-		border: 1px solid #fff
-		background: $accent
-		color: #fff
+	&__logo
+		img
+			width: 100%
+
+	&__info
+		display: grid
+		grid-template: 60px / auto auto
+		// align-content: center
+		align-items: center
+		justify-content: center
+		gap: 20px
+
+	&__leng
+		color: #6d6b6b
+		font-size: 20px
+		line-height: 25px
+
+		a
+			color: #f3f5f8
+			text-decoration: none
+
+	&__soc
+		display: grid
+		grid-template: repeat(1,60px) / repeat(2,60px)
+		gap: 20px
+
+		a
+			display: flex
+			justify-content: center
+			align-items: center
+			background: linear-gradient(270deg, #343333 1.89%, #474747 44.47%, #767676 82.97%)
+
+.menu
+	grid-area: menu
+
+.banner
+	grid-area: banner
+
+	img
+		width: 100%
+
+.login
+	grid-area: login
+
+.search
+	grid-area: search
+
+.program
+	grid-area: program
+
+.tovar
+	grid-area: tovar
+
+.plus
+	grid-area: plus
+
+.sales
+	grid-area: sales
+
+
+.footer
+	grid-area: footer
+	background: #c28d8d
