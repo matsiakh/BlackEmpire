@@ -71,14 +71,85 @@
 .menu
 	grid-area: menu
 
+	&__item
+		padding: 20px
+		background: linear-gradient(90deg, #000000 0%, #434343 100%)
+		margin-bottom: 4px
+		
+		&:hover
+			background: linear-gradient(270deg, #343333 1.89%, #474747 44.47%, #767676 82.97%)
+
+	&__link
+		display: flex
+		color: #fff
+		text-decoration: none
+		align-items: center
+
+		&:hover
+			color: #fff
+
+		svg
+			margin-right: 10px
+
+	&__title
+		font-weight: 400
+		font-size: 18px
+		line-height: 20px
+
 .banner
 	grid-area: banner
 
-	img
-		width: 100%
-
 .login
 	grid-area: login
+
+	&__link
+		@extend .menu__link
+		background: linear-gradient(90deg, #030303 5.95%, #494949 29.91%, #121212 45.14%, #040404 63.51%, #0D0D0D 80.27%, #040404 92.7%)
+		padding: 20px
+
+	&__form
+		padding: 20px
+		background: linear-gradient(90deg, #000000 0%, #434343 100%)
+
+		p,
+		a
+			color: #F3F5F8
+			font-weight: 400
+			font-size: 16px
+			line-height: 24px
+			margin-bottom: 8px
+			text-decoration: none
+
+		input
+			width: 100%
+			background: #505050
+			border: none
+			height: 40px
+			margin-bottom: 20px
+
+	&__btn
+		width: 100%
+		font-weight: 400
+		font-size: 16px
+		line-height: 16px
+		text-transform: uppercase
+		height: 50px
+		background: linear-gradient(270deg, #343333 1.89%, #474747 44.47%, #767676 82.97%)
+		color: #fff
+		border: none
+		margin-bottom: 15px
+
+		&:hover
+			color: #767676
+
+	&__regist
+		display: flex
+		gap: 15px
+
+		a
+			&:hover
+				color: #767676
+
 
 .search
 	grid-area: search
