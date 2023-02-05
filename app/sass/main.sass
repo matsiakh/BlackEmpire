@@ -102,7 +102,7 @@
 .login
 	grid-area: login
 
-	&__link
+	&__heading
 		@extend .menu__link
 		background: linear-gradient(90deg, #030303 5.95%, #494949 29.91%, #121212 45.14%, #040404 63.51%, #0D0D0D 80.27%, #040404 92.7%)
 		padding: 20px
@@ -157,8 +157,8 @@
 .search
 	grid-area: search
 
-	&__link
-		@extend .login__link
+	&__heading
+		@extend .login__heading
 
 	&__form
 		display: grid
@@ -174,8 +174,32 @@
 			text-align: center
 			color: #fff
 
+		::placeholder
+			color: #fff
+			background: url(../images/dist/search__img2.svg) no-repeat
+			background-position: 40px
+
 .program
 	grid-area: program
+
+	&__heading
+		@extend .login__heading
+
+	&__percent
+		display: grid
+		grid-template-rows: 145px
+		background: linear-gradient(90deg, #000000 0%, #434343 100%)
+		justify-items: center
+		align-items: center
+		font-size: 30px
+		line-height: 24px
+
+		a
+			text-decoration: none
+			color: #F3F5F8
+
+			&:hover
+				color: #767676
 
 .tovar
 	grid-area: tovar
