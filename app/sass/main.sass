@@ -30,7 +30,7 @@
 
 .header
 	grid-area: header
-	padding: 25px 0
+	padding: 25px 0 0
 
 	&__container
 		display: grid
@@ -64,7 +64,7 @@
 		gap: 20px
 
 		a
-			display: flex
+			display: grid
 			justify-content: center
 			align-items: center
 			background: linear-gradient(270deg, #343333 1.89%, #474747 44.47%, #767676 82.97%)
@@ -74,8 +74,8 @@
 
 	&__item
 		display: grid
-		grid-template-columns: 100%
-		grid-template-rows: 70px
+		grid-template-columns: 1fr
+		grid-template-rows: 1fr
 		margin-bottom: 4px
 		background: linear-gradient(90deg, #000000 0%, #434343 100%)
 
@@ -87,7 +87,7 @@
 		padding: 20px
 		align-items: center
 		gap: 10px
-		grid-template-columns: 10% 90%
+		grid-template-columns: 30px 1fr
 		color: #fff
 		text-decoration: none
 
@@ -145,7 +145,8 @@
 			color: #767676
 
 	&__regist
-		display: flex
+		display: grid
+		grid-template-columns: 1fr 1fr
 		gap: 15px
 
 		a
@@ -162,8 +163,8 @@
 
 	&__form
 		display: grid
-		grid-template-columns: 100%
-		grid-template-rows: 60px 50px
+		grid-template-columns: 1fr
+		grid-auto-rows: 60px 50px
 		gap: 20px
 		padding: 20px
 		background: linear-gradient(90deg, #000000 0%, #434343 100%)
@@ -179,15 +180,21 @@
 				background: url(../images/dist/search__img2.svg) no-repeat
 				background-position: 40px
 
+	&__btn
+		@extend .login__btn
+		margin-bottom: 0
+
 .program
 	grid-area: program
+	display: grid
+	grid-template-rows: 70px 145px
 
 	&__heading
 		@extend .login__heading
+		margin-bottom: 0
 
 	&__percent
 		display: grid
-		grid-template-rows: 145px
 		background: linear-gradient(90deg, #000000 0%, #434343 100%)
 		justify-items: center
 		align-items: center
@@ -204,8 +211,6 @@
 .tovar
 	display: grid
 	grid-area: tovar
-	grid-template-columns: 850px
-	grid-template-rows: 70px
 	grid-template-areas: 'heading heading heading' 'exchang exchang exchang' 'list list list'
 	gap: 10px
 
@@ -234,32 +239,33 @@
 	&__item
 		display: grid
 		grid-template-columns: 82px 3fr 1fr 105px 96px 120px
+		justify-content: space-between
 		gap: 20px
 		background: linear-gradient(90deg, #000000 0%, #434343 100%)
 		color: #fff
 		align-items: center
 		padding-right: 20px
 
-	&__price
+	&__price,
+	&__newprice
 		font-size: 26px
 		line-height: 32px
 		color: #fff
+		position: relative
 
 		&--sale
 			color: #808080
 
 		span
-			position: relative
-
 			&::before
 				content: ""
 				display: block
 				position: absolute
-				width: 90%
+				width: 100%
 				top: 15px
 				left: 0
 				height: 0px
-				border: 2px solid #F3F5F8
+				border: 1px solid #F3F5F8
 				transform: rotate(-6.31deg)
 
 	&__number
@@ -268,8 +274,16 @@
 		font-size: 16px
 		line-height: 24px
 
+	&__text
+		font-size: 16px
+		line-height: 24px
+
 	&__btn
-	text-transform: uppercase
+		text-transform: uppercase
+		background: linear-gradient(270deg, #343333 1.89%, #474747 44.47%, #767676 82.97%)
+		border: none
+		color: #fff
+		height: 50px
 
 .plus
 	grid-area: plus
