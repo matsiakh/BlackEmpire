@@ -8,13 +8,13 @@
 	margin: 0 auto
 	display: grid
 	grid-template-columns: 345px 1fr 345px
-	grid-template-areas: 'header header header' 'menu banner banner' 'login tovar plus' 'search tovar sales' 'program tovar ...' 'footer footer footer'
+	grid-template-areas: 'header header header' 'menu banner banner' 'login tovar plus' 'search tovar sales' 'program tovar sales' 'footer footer footer'
 	gap: 30px
 
 	+r(1650)
 		max-width: 1200px
 		grid-template-columns: 1fr 1fr 1fr
-		grid-template-areas: 'header header header' 'menu banner banner' 'login tovar tovar' 'search tovar tovar' 'program tovar ...' 'footer footer footer'
+		grid-template-areas: 'header header header' 'menu banner banner' 'login tovar tovar' 'search tovar tovar' 'program tovar sales' 'footer footer footer'
 
 	+r(1200)
 		max-width: 992px
@@ -285,8 +285,68 @@
 		color: #fff
 		height: 50px
 
-.plus
+		&:hover
+			color: #767676
+
+.plus,
+.sales
 	grid-area: plus
+
+	&__heading
+		@extend .login__heading
+
+	&__item
+		@extend .menu__item
+
+	&__link
+		padding: 13px 20px
+		text-decoration: none
+		color: #F3F5F8
+		font-size: 18px
+		line-height: 24px
+
+		&:hover
+			color: #767676
+
+		span
+			font-size: 16px
+			line-height: 16px
+			color: #808080
 
 .sales
 	grid-area: sales
+
+.footer
+	grid-area: footer
+	background: linear-gradient(90deg, #000000 0%, #434343 100%)
+	background-size: cover
+
+	&__container
+		display: flex
+		justify-content: space-between
+		padding: 25px 0
+
+		ul
+			display: flex
+			align-items: center
+			gap: 80px
+
+	&__link
+		font-size: 20px
+		line-height: 25px
+		color: #fff
+		text-decoration: none
+
+		&:hover
+			color: #767676
+
+	&__title
+		&--main
+			background: linear-gradient(270deg, #343333 1.89%, #474747 44.47%, #767676 82.97%)
+			-webkit-background-clip: text
+			-webkit-text-fill-color: transparent
+
+	&__soc
+		@extend .header__soc
+
+
