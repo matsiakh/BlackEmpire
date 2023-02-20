@@ -63,11 +63,35 @@
 		grid-template: repeat(1,60px) / repeat(2,60px)
 		gap: 20px
 
-		a
+		&_btn
 			display: grid
 			justify-content: center
 			align-items: center
-			background: linear-gradient(270deg, #343333 1.89%, #474747 44.47%, #767676 82.97%)
+			position: relative
+			overflow: hidden
+
+			&:hover
+				&::before
+					width: 300%
+					transform: translate(0, -50%)
+					left: 0
+
+			&:active
+				&::before
+					width: 150%
+					transform: translate(0, -50%)
+					left: 0
+
+			&:before
+				content: ""
+				display: block
+				width: 100%
+				height: 100%
+				background: linear-gradient(270deg, #343333 1.89%, #474747 44.47%, #767676 82.97%)
+				background-size: cover
+				z-index: -1
+				+absolute
+				+transition
 
 .menu
 	grid-area: menu
@@ -318,8 +342,17 @@
 
 .footer
 	grid-area: footer
-	background: linear-gradient(90deg, #000000 0%, #434343 100%)
-	background-size: cover
+	position: relative
+
+	&:before
+		content: ""
+		display: block
+		width: 100vw
+		height: 100%
+		background: linear-gradient(90deg, #000000 0%, #434343 100%)
+		background-size: cover
+		z-index: -1
+		+absolute
 
 	&__container
 		display: flex
@@ -348,3 +381,6 @@
 
 	&__soc
 		@extend .header__soc
+
+		&_btn
+			@extend .header__soc_btn
