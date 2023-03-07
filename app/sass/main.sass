@@ -8,13 +8,13 @@
 	margin: 0 auto
 	display: grid
 	grid-template-columns: 345px 1fr 345px
-	grid-template-areas: 'header header header' 'menu banner banner' 'login tovar plus' 'search tovar sales' 'program tovar sales' 'footer footer footer'
+	grid-template-areas: 'header header header' 'menu banner banner' 'main main main' 'footer footer footer'
 	gap: 30px
 
 	+r(1650)
 		max-width: 1200px
 		grid-template-columns: 1fr 1fr 1fr
-		grid-template-areas: 'header header header' 'menu banner banner' 'login tovar tovar' 'search tovar tovar' 'program tovar sales' 'footer footer footer'
+		// grid-template-areas: 'header header header' 'menu banner banner' 'login tovar tovar' 'search tovar tovar' 'program tovar sales' 'footer footer footer'
 
 	+r(1200)
 		max-width: 992px
@@ -124,9 +124,25 @@
 .banner
 	grid-area: banner
 
-.login
-	grid-area: login
+.main
+	display: grid
+	grid-area: main
+	grid-template-columns: 1fr 2fr 1fr
+	grid-template-areas: 'left tovar right'
+	gap: 30px
 
+.left
+	display: grid
+	// grid-template-columns: 1fr
+	grid-area: left
+	gap: 30px
+
+.right
+	display: grid
+	grid-area: right
+	gap: 30px
+
+.login
 	&__heading
 		@extend .menu__link
 		background: linear-gradient(90deg, #030303 5.95%, #494949 29.91%, #121212 45.14%, #040404 63.51%, #0D0D0D 80.27%, #040404 92.7%)
@@ -180,8 +196,6 @@
 				color: #767676
 
 .search
-	grid-area: search
-
 	&__heading
 		@extend .login__heading
 
@@ -209,7 +223,6 @@
 		margin-bottom: 0
 
 .program
-	grid-area: program
 	display: grid
 	grid-template-rows: 70px 145px
 
@@ -235,18 +248,20 @@
 .tovar
 	display: grid
 	grid-area: tovar
-	grid-template-areas: 'heading heading heading' 'exchang exchang exchang' 'list list list'
+	grid-template-columns: 1fr
+	// grid-template-areas: 'heading heading heading' 'exchang exchang exchang' 'list list list'
 	gap: 10px
+	align-items: start
 
 	&__heading
-		grid-area: heading
+		// grid-area: heading
 		@extend .login__heading
 		display: grid
 		grid-template-columns: 1fr 125px 1fr
 		gap: 80px
 
 	&__exchang
-		grid-area: exchang
+		// grid-area: exchang
 		grid-template-columns: 1fr 1fr
 		justify-content: space-between
 		@extend .login__heading
@@ -314,8 +329,6 @@
 
 .plus,
 .sales
-	grid-area: plus
-
 	&__heading
 		@extend .login__heading
 
@@ -336,9 +349,6 @@
 			font-size: 16px
 			line-height: 16px
 			color: #808080
-
-.sales
-	grid-area: sales
 
 .footer
 	grid-area: footer
