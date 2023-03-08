@@ -127,9 +127,10 @@
 .main
 	display: grid
 	grid-area: main
-	grid-template-columns: 1fr 2fr 1fr
+	grid-template-columns: 1fr 850px 1fr
 	grid-template-areas: 'left tovar right'
 	gap: 30px
+	align-items: start
 
 .left
 	display: grid
@@ -248,23 +249,25 @@
 .tovar
 	display: grid
 	grid-area: tovar
-	grid-template-columns: 1fr
-	// grid-template-areas: 'heading heading heading' 'exchang exchang exchang' 'list list list'
+	grid-template-areas: 'heading heading heading' 'exchang exchang exchang' 'list list list'
 	gap: 10px
-	align-items: start
 
 	&__heading
-		// grid-area: heading
+		grid-area: heading
 		@extend .login__heading
 		display: grid
 		grid-template-columns: 1fr 125px 1fr
 		gap: 80px
+		height: 70px
+		margin-bottom: 0
 
 	&__exchang
-		// grid-area: exchang
+		grid-area: exchang
 		grid-template-columns: 1fr 1fr
 		justify-content: space-between
 		@extend .login__heading
+		height: 70px
+		margin-bottom: 0
 
 		a
 			display: grid
@@ -278,7 +281,6 @@
 	&__item
 		display: grid
 		grid-template-columns: 82px 3fr 1fr 105px 96px 120px
-		justify-content: space-between
 		gap: 20px
 		background: linear-gradient(90deg, #000000 0%, #434343 100%)
 		color: #fff
