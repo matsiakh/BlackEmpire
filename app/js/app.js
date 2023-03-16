@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function(){
 					headerLeng.classList.toggle(active);
 					button.classList.toggle(hamActive);
 					head.classList.toggle(headerActive);
+					head.classList.toggle(headerActive);
 				});
 
 	};
