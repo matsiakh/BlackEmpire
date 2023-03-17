@@ -12,11 +12,10 @@ document.addEventListener("DOMContentLoaded", function(){
 					headerLeng.classList.toggle(active);
 					button.classList.toggle(hamActive);
 					head.classList.toggle(headerActive);
-					head.classList.toggle(headerActive);
 				});
 
 	};
-	hamburger('.hamburger', '.menu', 'menu--active', 'hamburger--active', '.header', 'header--menu');
+	// hamburger('.hamburger', '.menu', 'menu--active', 'hamburger--active', '.header', 'header--menu');
 
 
 
