@@ -15,11 +15,26 @@ document.addEventListener("DOMContentLoaded", function(){
 				});
 
 	};
-	// hamburger('.hamburger', '.menu', 'menu--active', 'hamburger--active', '.header', 'header--menu');
+	hamburger('.hamburger', '.menu', 'menu--active', 'hamburger--active', '.header', 'header--menu');
 
-
-
-
+	const anchorLinks = document.querySelectorAll('a[href^="#"]');
+ 
+	anchorLinks.forEach(link => {
+		link.addEventListener('click', function(e) {
+			e.preventDefault();
+	 
+			const href = this.getAttribute('href');
+			const target = document.querySelector(href);
+			const headerHeight = document.querySelector('header').offsetHeight;
+	 
+			target.scrollIntoView({
+				behavior: 'smooth',
+				block: 'start',
+				inline: 'nearest',
+				offset: -headerHeight
+			});
+		});
+	});
 
 })
 
