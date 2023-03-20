@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function(){
 				behavior: 'smooth',
 				block: 'start',
 				inline: 'nearest',
-				offset: -headerHeight
+				// offset: -headerHeight
 			});
 		});
 	});
