@@ -10,10 +10,12 @@
 	<link rel="icon" href="images/favicon.png">
 	<meta property="og:image" content="images/dist/preview.jpg">
 	<link rel="stylesheet" href="css/app.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,900;1,700;1,900&display=swap" rel="stylesheet">
 	<script src="js/app.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </head>
 
 
@@ -37,7 +39,7 @@
 						<a href="#">ENG</a>
 					</div>
 					<div class="header__soc">
-						<a href="#bottom" class="header__soc_btn">
+						<a href="#bottom" class="header__soc_btn link">
 							<svg width="24" height="21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.117 8.67 22.402.105c.988-.373 1.85.251 1.53 1.81l.002-.002-3.624 17.82c-.269 1.262-.988 1.57-1.994.974l-5.519-4.245-2.662 2.677c-.294.307-.542.566-1.113.566l.392-5.861L19.642 4.2c.445-.409-.1-.64-.686-.232l-12.64 8.305L.867 10.5c-1.183-.391-1.208-1.234.25-1.83Z" fill="#fff"/></svg>
 						</a>
 						<a href="#bottom" class="header__soc_btn">
@@ -116,7 +118,22 @@
 		</div>
 
 		<div class="banner">
-			<img src="./images/dist/banner.png" alt="">
+			<div class="swiper">
+				<!-- Additional required wrapper -->
+				<div class="swiper-wrapper">
+					<!-- Slides -->
+					<div class="swiper-slide"><img src="./images/src/banner.png" alt=""></div>
+					<div class="swiper-slide"><img src="./images/src/banner.png" alt=""></div>
+					<div class="swiper-slide"><img src="./images/src/banner.png" alt=""></div>
+					<div class="swiper-slide"><img src="./images/src/banner.png" alt=""></div>
+					<div class="swiper-slide"><img src="./images/src/banner.png" alt=""></div>
+					<div class="swiper-slide"><img src="./images/src/banner.png" alt=""></div>
+					<div class="swiper-slide"><img src="./images/src/banner.png" alt=""></div>
+				</div>
+				<!-- If we need pagination -->
+				<div class="swiper-pagination"></div>
+	
+			</div>
 		</div>
 
 		<div class="main">

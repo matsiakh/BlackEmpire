@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function(){
 			const button = document.querySelector(ham),
 					headerLeng = document.querySelector(leng),
 					head = document.querySelector(header);
-					console.log(head);
 
 				button.addEventListener('click', () => {
 					headerLeng.classList.toggle(active);
@@ -17,23 +16,39 @@ document.addEventListener("DOMContentLoaded", function(){
 	};
 	hamburger('.hamburger', '.menu', 'menu--active', 'hamburger--active', '.header', 'header--menu');
 
-	const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+	const link = (link) => {
+		const anchorLinks = document.querySelectorAll(link);
  
-	anchorLinks.forEach(link => {
-		link.addEventListener('click', function(e) {
-			e.preventDefault();
-	 
-			const href = this.getAttribute('href');
-			const target = document.querySelector(href);
-			const headerHeight = document.querySelector('header').offsetHeight;
-	 
-			target.scrollIntoView({
-				behavior: 'smooth',
-				block: 'start',
-				inline: 'nearest',
-				// offset: -headerHeight
+		anchorLinks.forEach(link => { 
+			link.addEventListener('click', function(e) {
+				e.preventDefault();
+		 
+				const href = this.getAttribute('href');
+				const target = document.querySelector(href);
+				const headerHeight = document.querySelector('header');
+
+				target.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start',
+					inline: 'nearest',
+					offset: -headerHeight
+				});
 			});
 		});
+	}
+	link('.link')
+
+	const swiper = new Swiper('.swiper', {
+		// Optional parameters
+		// direction: 'vertical',
+		// loop: true,
+	
+		// If we need pagination
+		pagination: {
+			el: '.swiper-pagination',
+		},
+
 	});
 
 })
